@@ -61,7 +61,7 @@ class Frontier:
         # depth-first search
         if algorithm == "DFS":
             # TODO: implement depth-first search.
-            return self.frontier[random_index]
+            return
 
         # breadth-first search
         if algorithm == "BFS":
@@ -273,4 +273,3 @@ BFS (Breadth-first search), or HS (Heuristic search)."""
 
 if __name__ == "__main__":
     main()
-2
