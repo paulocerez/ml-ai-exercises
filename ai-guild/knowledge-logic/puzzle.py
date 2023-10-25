@@ -11,6 +11,8 @@ for person in people:
     for house in houses:
         symbols.append(Symbol(f"{person}{house}"))
 
+# Current knowledge
+
 # Each person belongs to a house.
 for person in people:
     knowledge.add(Or(
@@ -26,7 +28,8 @@ for person in people:
         for h2 in houses:
             if h1 != h2:
                 knowledge.add(
-                    Implication(Symbol(f"{person}{h1}"), Not(Symbol(f"{person}{h2}")))
+                    Implication(Symbol(f"{person}{h1}"),
+                                Not(Symbol(f"{person}{h2}")))
                 )
 
 # Only one person per house.
@@ -35,7 +38,8 @@ for house in houses:
         for p2 in people:
             if p1 != p2:
                 knowledge.add(
-                    Implication(Symbol(f"{p1}{house}"), Not(Symbol(f"{p2}{house}")))
+                    Implication(Symbol(f"{p1}{house}"),
+                                Not(Symbol(f"{p2}{house}")))
                 )
 
 knowledge.add(
